@@ -1,0 +1,21 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h2 id="teamtitle" class="font-weight-bold text-center">Команда разработчиков</h2><br><br>
+
+{% for developer in developers %}
+<div class="row justify-content-center my-3">
+  <div class="col-md-10">
+    <img src="{{ developer.photo.url }}" class="img-fluid mb-2" width="250">
+    <h2>{{ developer.name }}</h2>
+    <h5 class="text-muted">Возраст: {{ developer.age }}, Специальность: {{developer.specialty }}</h5>
+    <h4>{{ developer.description }}</h4>
+    <br><br><br>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}
